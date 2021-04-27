@@ -1,0 +1,108 @@
+<!--<!doctype html>-->
+<!--<html>-->
+<!--<head>-->
+<!--<meta charset="utf-8">-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+
+<head>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 40%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+</head>
+
+
+
+{% extends 'hodindex.html' %}
+{% block body %}
+<body>
+	<form action="/hodsempromoteupdate" method="post">
+	
+	<table width="200"  id="customers" align="center">
+  <tbody>
+    <tr>
+      <th scope="row">Batch</th>
+		
+      <td><label for="select"></label>
+        <select name="select" id="select">
+			<option>select</option>
+			<option>2018-2021</option>
+			<option>2020-2024</option>
+        </select></td>
+		<tr>
+      <th scope="row">Semester</th>
+		
+      <td><label for="select1"></label>
+        <select name="select1" id="select1">
+			<option>select</option>
+			<option>1</option>
+			<option>2</option>
+        </select></td>
+      <td><input type="submit" name="button" id="button" value="Search"></td>
+    </tr>
+	  </table>
+	
+	  <table width="200" id="customers" align="center">
+    <tr>
+        <th scope="row">Roll number</th>
+        <th>Name</th>
+        <th>Semester</th>
+       
+		</th>
+
+
+    </tr>
+	  {% for i in val %}
+        <tr>
+      <td scope="row">{{i[16]}}&nbsp;</td>
+      <td>&nbsp;{{i[3]}}</td>
+           <td>&nbsp;{{i[18]}}</td>
+           
+
+      <td><a href="hodsempromotedit?id={{i[1]}}">promote
+          
+          </a></td>
+    </tr>
+    {% endfor %}
+   
+    <!--<tr>-->
+		<!---->
+      <!--<th scope="row">&nbsp;</th>-->
+      <!--<td>&nbsp;</td>-->
+		<!--<td>&nbsp;</td>-->
+      <!--<td><a href="#">Edit/Delete</a></td>-->
+    <!--</tr>-->
+		</table>  
+    </form>
+		<form action="/hodsempromote" method="">
+	 <tr>
+      <th colspan="3" scope="row"><input type="submit" name="button" id="button2" value="Add"></th>
+      </tr>
+		
+	</tbody>
+
+</form>
+</body>
+{% endblock %}
+<!--</html>-->

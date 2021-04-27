@@ -1,0 +1,64 @@
+<!--<!doctype html>-->
+<!--<html>-->
+<!--<head>-->
+<!--<meta charset="utf-8">-->
+<!--<title>Untitled Document</title>-->
+<style type="text/css">
+#customers {  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 40%;
+}
+</style>
+</head>
+{% extends 'hodindex.html' %}
+{% block body %}
+<body>
+<form action="/hodsuballot" method="post">
+  <table width="200"  id="customers" align="center">
+    <tbody>
+      <tr>
+        <th scope="row">Batch</th>
+        <td><label for="select"></label>
+          <select name="select" id="select">
+            <option>select</option>
+            <option>2018-2021</option>
+            <option>2020-2024</option>
+          </select></td>
+      <tr>
+        <th scope="row">Semester</th>
+        <td><label for="select1"></label>
+          <select name="select1" id="select1">
+            <option>select</option>
+            <option>1</option>
+            <option>2</option>
+          </select></td>
+        
+      </tr>
+	  <tr>
+        <th scope="row">Staff</th>
+        <td><label for="select1"></label>
+          <select name="select1" id="select1">
+            <option>select</option>
+            <option></option>
+            <option></option>
+          </select></td>
+        
+      </tr>	
+		
+	 <tr>
+        <th scope="row">Subject</th>
+        <td><label for="textfield"></label>
+        <input type="text" name="textfield" id="textfield"></td>
+        
+      </tr>	
+  </table>
+</form>
+<form action="/hodsempromote" method="">
+  <tr>
+    <th colspan="3" scope="row"><input type="submit" name="button" id="button2" value="Add"></th>
+  </tr>
+  </tbody>
+</form>
+</body>
+{% endblock %}
+<!--</html>-->
