@@ -1,0 +1,93 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'staffindex.html' %}
+{% block body %}
+<head>
+
+
+  <style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 40%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+</head>
+<body>
+<form id="form1" name="form1" method="post" action="/attendance">
+  <div align="center">
+    <table width="527" border="1" id="customers">
+      <tr>
+        <td width="121" scope="row">course:
+          <label>
+          <select name="select2">
+            {% for i in val1 %}
+            <option value="{{i[0]}}">{{i[1]}}</option>
+            {% endfor %}
+          </select>
+        </label></td>
+        <td width="98">subject:
+          <label>
+          <select name="select3">
+            {% for i in val %}
+            <option value="{{i[1]}}">{{i[1]}}</option>
+            {% endfor %}
+          </select>
+        </label></td>
+
+        <td width="140"><label>
+          sem:
+          <select name="select4">
+            <option value="1">1</option>
+             <option value="2">2</option>
+             <option value="3">3</option>
+             <option value="4">4</option>
+             <option value="5">5</option>
+             <option value="6">6</option>
+          </select>
+      </label></td>      </tr>
+      <tr>
+        <td colspan="4" scope="row"><label>
+          <input type="submit" name="Submit2" value="Search" align="center">
+        </label></td>
+      </tr>
+      <tr>
+        <th height="36" scope="row">Student</th>
+        <th>Subject</td>
+        <th>Semester        
+      <th></td>      </tr>
+      {% for i in va %}
+      <tr>
+        <td scope="row">{{i[0]}}</td>
+        <td>{{i[2]}}</td>
+        <td>{{i[4]}}</td>
+        <td><a href="/markattendance">Mark Attendance</a></td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</form>
+</body>
+{% endblock %}
+<!--</html>-->

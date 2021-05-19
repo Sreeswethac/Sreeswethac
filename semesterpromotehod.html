@@ -5,10 +5,29 @@
 <!--<title>Untitled Document</title>-->
 {% extends 'hodindex.html' %}
 {% block body %}
-<style type="text/css">
-#customers {  font-family: Arial, Helvetica, sans-serif;
+<head>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 40%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
 }
 </style>
 </head>
@@ -21,8 +40,8 @@
       <th scope="row">Semester</th>
       
       <td><label for="select1"></label>
-        <select name="select1" id="select1">
-          <option>select</option>
+        <select name="select1" id="select1" required >
+          <option value="select">select</option>
           <option>1</option>
           <option>2</option>
           <option>3</option>
@@ -30,10 +49,8 @@
           <option>5</option>
           <option>6</option>
         </select></td>
-      
     </tr>
     <tr>
-
       <td><center><input type="submit" name="button" id="button" value="Promote" ></center></td>
     </tr>
 </table>

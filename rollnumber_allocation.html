@@ -1,0 +1,89 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+
+<!--<body>-->
+{% extends 'staffindex.html' %}
+{% block body %}
+<head>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 40%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+</head>
+<form id="form1" name="form1" method="post" action="/roolnumber_allocationnn">
+  <div align="center">
+    <table width="200" border="1" id="customers">
+      <tr>
+        <th scope="row">Course</th>
+        <td>&nbsp;</td>
+        <td><label>
+          <select name="select" required>
+            {% for i in val1 %}
+            <option value="{{i[0]}}">{{i[1]}}</option>
+            {% endfor %}
+          </select>
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row">Semester</th>
+        <td>&nbsp;</td>
+        <td><label>
+          <select name="select2" >
+
+            <option value="1">1</option>
+             <option value="2">2</option>
+             <option value="3">3</option>
+             <option value="4">4</option>
+             <option value="5">5</option>
+             <option value="6">6</option>
+          </select>
+        </label></td>
+      </tr>
+      <tr>
+        <td colspan="3" scope="row"><label>
+          <input type="submit" name="Submit" value="Search" />
+        </label></td>
+      </tr>
+      <tr>
+        <td scope="row">Student</td>
+        <td> Total Seat</td>
+		<td></td>
+        
+      </tr>
+      {% for i in valll %}
+      <tr>
+        <td scope="row">{{i[8]}}</td>
+        <td>{{i[2]}}</td>
+        <td><a href="{{url_for('allocate',id=i[2])}}">Allocate</a></td>
+      </tr>
+      {% endfor %}
+      </table>
+  </div>
+</form>
+{% endblock %}
+<!--</body>-->
+<!--</html>-->
